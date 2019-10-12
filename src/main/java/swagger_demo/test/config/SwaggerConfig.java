@@ -24,11 +24,11 @@ public class SwaggerConfig {
     public Docket swaggerSpringMvcPlugin() {
         // 配置全局参数返回状态
         java.util.List<ResponseMessage> resMsgList = Arrays.asList(
-//                new ResponseMessageBuilder().code(200).message("成功！").build(),
-//                new ResponseMessageBuilder().code(-1).message("失败！").build(),
-//                new ResponseMessageBuilder().code(401).message("参数校验错误！").build(),
-//                new ResponseMessageBuilder().code(403).message("没有权限操作，请后台添加相应权限！").build(),
-//                new ResponseMessageBuilder().code(500).message("服务器内部异常，请稍后重试！").build(),
+                new ResponseMessageBuilder().code(200).message("成功！").build(),
+                new ResponseMessageBuilder().code(-1).message("失败！").build(),
+                new ResponseMessageBuilder().code(401).message("参数校验错误！").build(),
+                new ResponseMessageBuilder().code(403).message("没有权限操作，请后台添加相应权限！").build(),
+                new ResponseMessageBuilder().code(500).message("服务器内部异常，请稍后重试！").build(),
                 new ResponseMessageBuilder().code(501).message("请登录！").build());
 
 
@@ -36,10 +36,10 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
                 .build()
-//                .globalResponseMessage(RequestMethod.GET, resMsgList)
-//                .globalResponseMessage(RequestMethod.POST, resMsgList)
-//                .globalResponseMessage(RequestMethod.PUT, resMsgList)
-//                .globalResponseMessage(RequestMethod.DELETE, resMsgList)
+                .globalResponseMessage(RequestMethod.GET, resMsgList)
+                .globalResponseMessage(RequestMethod.POST, resMsgList)
+                .globalResponseMessage(RequestMethod.PUT, resMsgList)
+                .globalResponseMessage(RequestMethod.DELETE, resMsgList)
                 ;
     }
     private ApiInfo apiInfo() {
