@@ -1,0 +1,14 @@
+
+server:
+  port: 21014
+
+spring:
+  application:
+    name: demo
+
+
+
+
+swagger:
+  base-package: swagger_demo.test
+  enabled: true
